@@ -1,0 +1,3 @@
+
+le falta una ventana y posiblemente el metodo para editar el contenido y los datos del titulo y adress una vez creado, pude hacerse 
+directamente en la vista de la tabal o en otra ventana que se llame y se edite 

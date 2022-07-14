@@ -135,6 +135,8 @@ public class LoginUI extends JFrame {
 		LabelIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 		LabelIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
+            	ProgressBar.startVentana();
+            	
                 loginBtnTxtMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -242,19 +244,15 @@ public class LoginUI extends JFrame {
 	private void loginBtnTxtMouseClicked(java.awt.event.MouseEvent evt) {
 		
 		try {
-			ProgressBar.startVentana();
-	//	Boolean autorized = false;
+		
 		String usuario = textFieldUser.getText();
 		String password = String.valueOf(passwordField.getPassword());
 		
-//		if (usuario != null && password != null) {
-//			autorized = UserService.getUserService().checkUser(usuario.trim(), password.trim());
-//		}
 
 		if (usuario != null && password != null && UserService.getUserService().checkUser(usuario.trim(), password.trim()) ) {
-	//	if (autorized) {
-			ProgressBar.detieneCuenta();
+			
 			IngresoFraseUI.startVentana();
+			ProgressBar.detieneCuenta();
 			frameLoginUI.setVisible(false);
 			
 		} else {
